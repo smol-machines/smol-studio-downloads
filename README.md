@@ -1,6 +1,6 @@
 # Smol Studio downloads
 
-Smol Studio runs local Docker containers, Compose projects, Kubernetes, and Linux virtual machines. Local workloads work without a Smol account.
+Smol Studio is a Docker Desktop replacement for running containers and testing code in local Linux sandboxes powered by smolvm. Local containers, Compose, Kubernetes, and VMs work without a Smol account.
 
 ## Apple Silicon preview
 
@@ -14,4 +14,6 @@ To verify the download, save the DMG and checksum together and run this command 
 shasum -a 256 -c smol-studio-1.0.0-darwin-arm64.dmg.sha256
 ```
 
-To run a Compose project, open Studio, choose **Home → Open project…**, select the folder containing your Compose file, and choose **Run project**.
+Docker and Compose use a shared VM that mounts your home directory for project bind mounts. To run a Compose project, choose **Home → Open project…**, select the folder containing your Compose file, and choose **Run project**.
+
+For a separate sandbox, choose **Machines → New machine → On this computer**. Each machine has its own Linux kernel. Host folder sharing is opt-in. To run offline, turn off **Allow outbound network access** and leave published ports empty.
